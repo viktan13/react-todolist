@@ -2,9 +2,9 @@ import React from 'react';
 
 const TrashListItem = (props) => {
     return (
-        <div>
-
-        </div>
+        <li>
+            {props.trashItem.name}
+        </li>
     );
 };
 

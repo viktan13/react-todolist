@@ -25,6 +25,8 @@ function App() {
         ]
     );
 
+    const [trash, setTrash] = useState([]);
+
     const updateTodo = (id, name) => {
         const newList = todos.map(el => el.id === id ? {...el, name} : el);
         setTodos(newList);
@@ -42,9 +44,11 @@ function App() {
     const deleteTask = (id) => {
         const newList = todos.filter(el => el.id !== id);
         setTodos(newList);
+        const trashed = todos.filter(el => el.id === id);
+        setTrash([...trash, ...trashed]);
     }
 
-  return (
+    return (
     <div className="App">
         <Header appName={appName} />
         <div className='forGrid'>
@@ -57,7 +61,8 @@ function App() {
             />
         </div>
         <hr/>
-        <Trash />
+        <Trash trash={trash}/>
+        <button onClick={check}>Check</button>
     </div>
   );
 }

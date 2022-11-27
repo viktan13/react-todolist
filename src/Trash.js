@@ -5,7 +5,7 @@ const Trash = (props) => {
     return (
         <div>
             <h2>Trash</h2>
-            <TrashList />
+            <TrashList trash={props.trash}/>
 
         </div>
     );

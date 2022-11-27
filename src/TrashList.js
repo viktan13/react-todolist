@@ -1,10 +1,14 @@
 import React from 'react';
+import TrashListItem from "./TrashListItem";
 
 const TrashList = (props) => {
     return (
-        <div>
-
-        </div>
+        <ol>
+            {props.trash.map(el => <TrashListItem
+                key={el.id}
+                trashItem={el}
+            />)}
+        </ol>
     );
 };
 
