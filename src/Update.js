@@ -18,6 +18,10 @@ const Update = (props) => {
         props.doneTask(props.listItem.id, props.listItem.done);
     }
 
+    function onDelete() {
+        props.deleteTask(props.listItem.id);
+    }
+
     return (
         <>
             <input
@@ -30,7 +34,7 @@ const Update = (props) => {
             <button hidden={hidden} onClick={onCancel}>Cancel</button>
             <button hidden={!hidden} onClick={() => setHidden(false)}>Update</button>
             <button hidden={!hidden} onClick={onDone}>Done</button>
-            <button hidden={!hidden}>Delete</button>
+            <button hidden={!hidden} onClick={onDelete}>Delete</button>
         </>
     );
 };

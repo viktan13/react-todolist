@@ -12,6 +12,7 @@ const ListItem = (props) => {
                 listItem={props.listItem}
                 updateTodo={props.updateTodo}
                 doneTask={props.doneTask}
+                deleteTask={props.deleteTask}
             />
 
         </li>

@@ -38,12 +38,22 @@ function App() {
         setTodos(newList);
     }
 
+    const deleteTask = (id) => {
+        const newList = todos.filter(el => el.id !== id);
+        setTodos(newList);
+    }
+
   return (
     <div className="App">
         <Header appName={appName} />
         <div className='forGrid'>
             <CreateTask addNewTask={addNewTask}/>
-            <List todos={todos} updateTodo={updateTodo} doneTask={doneTask}/>
+            <List
+                todos={todos}
+                updateTodo={updateTodo}
+                doneTask={doneTask}
+                deleteTask={deleteTask}
+            />
         </div>
     </div>
   );

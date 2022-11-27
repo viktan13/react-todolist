@@ -13,6 +13,7 @@ const List = (props) => {
                         listItem={el}
                         updateTodo={props.updateTodo}
                         doneTask={props.doneTask}
+                        deleteTask={props.deleteTask}
                     />)}
             </ol>
         </div>
