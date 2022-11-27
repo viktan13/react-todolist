@@ -4,6 +4,7 @@ import {v4 as uuidv4} from 'uuid';
 import List from "./List";
 import CreateTask from "./CreateTask";
 import './App.css'
+import Trash from "./Trash";
 
 
 function App() {
@@ -19,7 +20,7 @@ function App() {
         {
             id: uuidv4(),
             name: 'Learn React',
-            done: true,
+            done: false,
         },
         ]
     );
@@ -55,6 +56,8 @@ function App() {
                 deleteTask={deleteTask}
             />
         </div>
+        <hr/>
+        <Trash />
     </div>
   );
 }
