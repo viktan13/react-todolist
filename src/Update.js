@@ -9,6 +9,11 @@ const Update = (props) => {
         setHidden(true);
     }
 
+    const onSave = () => {
+        props.updateTodo(props.listItem.id, value);
+        setHidden(true);
+    }
+
     return (
         <>
             <input
@@ -17,7 +22,7 @@ const Update = (props) => {
                 value={value}
                 onChange={e => setValue(e.target.value)}
             />
-            <button hidden={hidden} onClick={() => props.updateTodo(props.listItem.id, value)}>Save</button>
+            <button hidden={hidden} onClick={onSave}>Save</button>
             <button hidden={hidden} onClick={onCancel}>Cancel</button>
         </>
     );
