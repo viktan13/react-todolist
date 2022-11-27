@@ -33,12 +33,17 @@ function App() {
         setTodos([...todos, {id: uuidv4(), done: false, name: task}]);
     }
 
+    const doneTask = (id, done) => {
+        const newList = todos.map(el => el.id === id ? {...el, done: !done} : el);
+        setTodos(newList);
+    }
+
   return (
     <div className="App">
         <Header appName={appName} />
         <div className='forGrid'>
             <CreateTask addNewTask={addNewTask}/>
-            <List todos={todos} updateTodo={updateTodo}/>
+            <List todos={todos} updateTodo={updateTodo} doneTask={doneTask}/>
         </div>
     </div>
   );

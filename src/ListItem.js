@@ -6,9 +6,14 @@ const ListItem = (props) => {
 
 
     return (
-        <li>
+        <li style={{textDecorationLine: props.listItem.done ? 'line-through' : ''}}>
             {props.listItem.name}
-            <Update listItem={props.listItem} updateTodo={props.updateTodo}/>
+            <Update
+                listItem={props.listItem}
+                updateTodo={props.updateTodo}
+                doneTask={props.doneTask}
+            />
+
         </li>
     );
 };
