@@ -5,7 +5,11 @@ const Trash = (props) => {
     return (
         <div>
             <h2>Trash</h2>
-            <TrashList trash={props.trash}/>
+            <TrashList
+                trash={props.trash}
+                removeFromTrash={props.removeFromTrash}
+                backToList={props.backToList}
+            />
 
         </div>
     );

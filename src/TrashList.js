@@ -7,6 +7,8 @@ const TrashList = (props) => {
             {props.trash.map(el => <TrashListItem
                 key={el.id}
                 trashItem={el}
+                removeFromTrash={props.removeFromTrash}
+                backToList={props.backToList}
             />)}
         </ol>
     );

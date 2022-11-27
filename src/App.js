@@ -27,6 +27,18 @@ function App() {
 
     const [trash, setTrash] = useState([]);
 
+    const backToList = (id) => {
+        const updTrashList = trash.filter(el => el.id !== id)
+        setTrash(updTrashList);
+        const backItem = trash.find(el => el.id === id);
+        setTodos([...todos, backItem]);
+    }
+
+    const removeFromTrash = (id) => {
+        const toRemove = trash.filter(el => el.id !== id);
+        setTrash(toRemove);
+    }
+
     const updateTodo = (id, name) => {
         const newList = todos.map(el => el.id === id ? {...el, name} : el);
         setTodos(newList);
@@ -61,8 +73,11 @@ function App() {
             />
         </div>
         <hr/>
-        <Trash trash={trash}/>
-        <button onClick={check}>Check</button>
+        <Trash
+            trash={trash}
+            removeFromTrash={removeFromTrash}
+            backToList={backToList}
+        />
     </div>
   );
 }

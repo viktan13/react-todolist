@@ -3,3 +3,7 @@
   grid-template-columns: auto auto auto;
   padding: 10px;
 }
+
+.padd {
+  padding: 50px;
+}
